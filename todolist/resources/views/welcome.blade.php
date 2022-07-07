@@ -13,10 +13,13 @@
         <script src="https://cdn.tailwindcss.com"></script>
 
         <style>
+            [v-cloack]{
+                display: none;
+            }
         </style>
     </head>
     <body class="h-full">
-        <div id="app" class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"></div>
+        <div id="app" v-cloak class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"></div>
 
         
        @vite('resources/js/app.js')

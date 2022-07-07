@@ -54,12 +54,15 @@ button {
   height: 200px;
   width: 200px;
 }
+.email{
+  border: 1px solid black;
+}
 </style>
 <template>
   {{ greeting }}
   <div>
     <span>
-        <input v-model="greeting" />
+        <input v-model="greeting" class="email" />
         
     </span>
   </div>
