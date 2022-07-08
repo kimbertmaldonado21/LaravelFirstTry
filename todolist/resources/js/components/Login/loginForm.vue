@@ -59,29 +59,41 @@ button {
 }
 </style>
 <template>
-  {{ greeting }}
+  
   <div>
     <span>
-        <input v-model="greeting" class="email" />
-        
+  
+      <button @click.prevent.stop="togglebox">toggle box</button>
+      <div class="box" v-if="isVisible"></div>
+      {{ greeting }}
+  <input class="email" @keyup.enter="greet(greeting + '!!!!')" v-model="greeting" />
     </span>
   </div>
   <hr />
-  <div v-if="isVisible" class="box"></div>
-  <div v-else-if="isVisible2" class="box2"></div>
-  <div v-else class="box3"></div>
+  
+
 </template>
 
 
 <script>
+
+
 export default {
   data() {
     return {
       greeting : "hello world",
       isVisible: false,
-      isVisible2: true,
-      isVisible3: false
+
     }
   },
+  methods: {
+    togglebox: function(){
+      this.isVisible = !this.isVisible
+    },
+    greet: function(greeting){
+      console.log(greeting)
+    }
+  },
+  
 }
 </script>
